@@ -36,28 +36,42 @@ var createScene = function () {
 
 
     //create sphere w params (x, y, z, diameter)
-    var s1 = createSphere(-1, 1, -1, 2);
+    var s1 = createSphere(1, 3, 0.5, 2);
+    //create sphere
+    var s2 = createSphere(2, 3.5, 0.5, 2);
+    var s6 = createSphere(3, 3, 0.5, 2.5);
+    
+    
+    var s3 = createSphere(-2, 3, 0.5, 2.25);
+    var s4 = createSphere(-3, 3, 0.5, 2);
+    var s5 = createSphere(-2, 2.5, 0.5, 2);
 
     //wrap sphere in material from URL file
-    s1.material = fileMat('https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', scene);
-    
-    //create sphere
-    var s2 = createSphere(2, 2, 0.5, 2);
 
     //wrap sphere in material from local file
-    s2.material = fileMat('moon.jpg', scene);
+    s1.material = fileMat('thunder-clouds.jpg', scene);
+    s2.material = fileMat('thunder-clouds.jpg', scene);
+    s3.material = fileMat('thunder-clouds.jpg', scene);
+    s4.material = fileMat('thunder-clouds.jpg', scene);
+    s5.material = fileMat('thunder-clouds.jpg', scene);
+    s6.material = fileMat('thunder-clouds.jpg', scene);
     
-    //create box with params x, y, z, width, height, ddepth
-    var b1 = createBox(2, -2, 2, 1, 1, 1);
+    //create box with params x, y, z, width, height, depth
+    var b1 = createBox(2, 1.5, 0.5, 1, 1, 1);
+
+    var b3 = createBox(-2.75, 0, 0.5, 1, 1, 1);
+
+    b3.material = fileMat('lightning.jpg', scene);
+    b3.rotation.z += Math.PI/4;
 
     //wrap box in material colored with hex code
-    b1.material = hexMat('#ff0000');
+    b1.material = fileMat('lightning.jpg', scene);
     b1.rotation.z += Math.PI/4;
 
     var b2 = createBox(0, -2, -1.5, 2, 2, 2);
 
     //wrap box in material from local file
-    b2.material = fileMat('why.png');
+    b2.material = fileMat('burnt_tree.jpg');
 
     return scene;
 };

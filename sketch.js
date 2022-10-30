@@ -65,7 +65,7 @@ var createScene = function () {
     b3.rotation.z += Math.PI/4;
 
     //wrap box in material colored with hex code
-    b1.material = fileMat('lightning.jpg', scene);
+    b1.material = hexMat('#FFFF00');
     b1.rotation.z += Math.PI/4;
 
     var b2 = createBox(0, -2, -1.5, 2, 2, 2);
